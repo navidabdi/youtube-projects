@@ -1,0 +1,127 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300);
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #fff;
+  overflow: hidden;
+}
+.wrapper {
+  background: #00796b;
+  height: 100vh;
+  position: relative;
+}
+.container {
+  width: 600px;
+  padding: 80px 0;
+  height: 400px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 25px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  overflow: hidden;
+  backdrop-filter: blur(0.9rem);
+}
+.container h1 {
+  font-size: 2.5rem;
+  transition-duration: 1s;
+  transition-timing-function: ease-in-out;
+  font-weight: bold;
+}
+form {
+  padding: 20px 0;
+  position: relative;
+  z-index: 2;
+  transition-duration: 1s;
+  transition-timing-function: ease-in-out;
+}
+form input {
+  appearance: none;
+  outline: 0;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 250px;
+  border-radius: 3px;
+  padding: 10px 15px;
+  margin: 0 auto 10px auto;
+  display: block;
+  text-align: center;
+  font-size: 18px;
+  color: #009688;
+  transition-duration: 0.25s;
+  font-weight: 300;
+}
+form input::placeholder {
+  color: #fff;
+}
+form input:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+form input:focus {
+  background-color: #fff;
+  width: 300px;
+}
+form input:focus::placeholder {
+  color: #009688;
+}
+form button {
+  appearance: none;
+  outline: 0;
+  background-color: #fff;
+  border: 0;
+  padding: 10px 15px;
+  color: #009688;
+  border-radius: 3px;
+  width: 250px;
+  cursor: pointer;
+  font-size: 18px;
+  transition-duration: 0.25s;
+}
+form button:hover {
+  background-color: #f5f7f9;
+}
+.bg-bubbles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.bg-bubbles li {
+  position: absolute;
+  list-style: none;
+  display: block;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.2);
+  bottom: -250px;
+  animation: square 20s infinite;
+  transition-timing-function: linear;
+  border-radius: 10px;
+}
+
+.wrapper.success .container h1 {
+  transform: translateY(85px);
+}
+
+.wrapper.success form {
+  transform: translateY(250px);
+  visibility: hidden;
+}
+
+@keyframes square {
+  0% {
+    transform: translate(0);
+  }
+  100% {
+    transform: translateY(-150vh) rotate(600deg);
+  }
+}
